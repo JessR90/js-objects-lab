@@ -232,7 +232,7 @@ After writing this method, call it and pass in a Pokemon object of your choice f
 Solve Exercise 10 here:
 */
 game.catchPokemon = function(pokemonObj) {
-  catchPokemon.push(pokemonObj)
+  game.party.push(pokemonObj)
 }
 
 
@@ -250,9 +250,13 @@ Also, log the `game.items` array to confirm that the pokeball quantity is being 
 Solve Exercise 11 here:
 */
 
-
-
-
+game.catchPokemon = function(pokemonObj) {
+  game.party.push(pokemonObj)
+  game.items[1].quantity -=1
+  console.log(game.items[1]);
+  console.log(game.items[1]);
+}
+game.catchPokemon(pokemon[100])
 /*
 Exercise 12
 1. Similar to Exercise 6, now complete gyms with a difficulty below 6. How will you approach this?
@@ -261,6 +265,12 @@ Exercise 12
 Solve Exercise 12 here:
 */
 
+game.gyms.forEach((gym) => {
+  if(gym.difficulty < 6)
+    gym.completed = true 
+})
+
+console.log(game.gyms);
 
 /*
 Exercise 13
@@ -285,6 +295,18 @@ For example, if five gym objects have a value of `true` on their `completed` pro
 Solve Exercise 13 here:
 */
 
+game.gymStatus = function(){
+  const gymTally = {completed: 0, incomplete: 0}
+game.gyms.forEach(gym => {
+  gymTally.completed.true +=1
+  gymTally.incomplete.false =0
+  // console.log(gymTally);
+  console.log(gymTally);
+}) 
+}
+game.gymStatus()
+
+
 
 /*
 Exercise 14
@@ -297,6 +319,13 @@ This method should:
 
 Solve Exercise 14 here:
 */
+
+game.partyCount = function() {
+  const pokeparty = {pokemon:Wartortle,pokemon:Scyther,pokemon:Gyardos,pokemon:Charizard}
+  game.partyCount.push()
+
+  console.log(partyCount);
+}
 
 
 /*
